@@ -13,11 +13,11 @@ function vampireDice() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
-function clearArrays(hunger, pool) {
-    for (let index = 0; index < hunger; index++) {
+function clearArrays() {
+    for (let index = 0; index < red.length; index++) {
         red[index] = 0;
     }
-    for (let index = 0; index < pool; index++) {
+    for (let index = 0; index < black.length; index++) {
         black[index] = 0;
     }
 }
@@ -124,7 +124,7 @@ formRoller.addEventListener("submit", (event) => {
     const hunger = formRoller.querySelector("#hunger").value;
     const pool = formRoller.querySelector("#pool").value - hunger;    
 
-    clearArrays(hunger, pool);
+    clearArrays();
     clearResults();
     fillRed(hunger);
     fillBlack(pool);
