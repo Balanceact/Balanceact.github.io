@@ -118,6 +118,22 @@ function printResults() {
     }
 }
 
+function rerollableNumber() {
+    for (let index = 0; index < black.length; index++) {
+        switch (black[index]) {
+            case 5:
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+                if (rerollable < 3) {
+                    rerollable++;
+                }
+                break;
+        }
+    }
+}
+
 formRoller.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -132,7 +148,7 @@ formRoller.addEventListener("submit", (event) => {
     clearResults();
     countSuccesses();
     printResults();
-    rerollable = 3;
+    rerollableNumber();
 });
 
 willpowerReRoll.addEventListener("click", () => {
