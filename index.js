@@ -13,6 +13,14 @@ function vampireDice() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
+function clearResults() {
+    successes = 0;
+    crits = 0;
+    rerollable = 0;
+    result.innerHTML = "<p>Successes: " + successes + "</p>";
+    icons.innerHTML = " ";
+}
+
 function fillRed(hunger) {
     for (let index = 0; index < hunger; index++) {
         red[index] = vampireDice();
@@ -31,8 +39,6 @@ function sortBoth() {
 }
 
 function countSuccesses() {
-    successes = 0;
-    crits = 0;
     for (let index = 0; index < red.length; index++) {
         if (red[index] >= 6) {
             successes = successes + 1;
@@ -109,9 +115,11 @@ formRoller.addEventListener("submit", (event) => {
     const hunger = formRoller.querySelector("#hunger").value;
     const pool = formRoller.querySelector("#pool").value - hunger;    
 
+    clearResults();
     fillRed(hunger);
     fillBlack(pool);
     sortBoth();
+    clearResults();
     countSuccesses();
     printResults();
     rerollable = 3;
@@ -125,6 +133,7 @@ willpowerReRoll.addEventListener("click", () => {
         }
     }
     sortBoth();
+    clearResults();
     countSuccesses();
     printResults();
 });
