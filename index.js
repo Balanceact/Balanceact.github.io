@@ -125,5 +125,6 @@ formRoller.addEventListener("submit", (event) => {
             rerollable.classList.remove("rerollable");
         }
         canReroll -= 1;
+        sleep(250);
     });
 });
