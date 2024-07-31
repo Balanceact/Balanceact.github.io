@@ -104,7 +104,6 @@ formRoller.addEventListener("submit", (event) => {
             let reroll = Math.floor(Math.random() * 10) + 1;
             switch (reroll) {
                 case 10:
-                    rerollable.src="/assets/normal-crit.png";
                     successes = successes + 1;
                     crits = crits + 1;
                     if (crits >= 2) {
@@ -112,14 +111,15 @@ formRoller.addEventListener("submit", (event) => {
                         crits = crits - 2;
                     }
                     result.innerHTML = "<p>Successes: " + successes + "</p>";
+                    rerollable.src="/assets/normal-crit.png";
                     break;
                 case 9:
                 case 8:
                 case 7:
                 case 6:
-                    rerollable.src="/assets/normal-success.png";
                     successes = successes + 1;
                     result.innerHTML = "<p>Successes: " + successes + "</p>";
+                    rerollable.src="/assets/normal-success.png";
                     break;
             }
             rerollable.classList.remove("rerollable");
