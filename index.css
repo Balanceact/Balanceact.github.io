@@ -6,7 +6,7 @@ body {
 form {
     background-color: blueviolet;
     color: white;
-    max-width: 400px;
+    max-width: 250px;
 }
 
 fieldset {
@@ -56,8 +56,27 @@ label {
     margin-inline-start: 0;
     margin-inline-end: 0;
     margin-top: 1rem;
-    max-width: 380px;
-    padding: 10px;
+    font-size: 3rem;
+}
+
+.damage {
+    background-color: darkgrey;
+    color: white;
+    margin: 0;
+    margin-block: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+.crit {
+    background-color: darkgrey;
+    color: white;
+    margin: 0;
+    margin-block: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
     font-size: 3rem;
 }
 
