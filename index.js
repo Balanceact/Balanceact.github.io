@@ -2,9 +2,11 @@ const formRoller = document.querySelector(".form-roller");
 const result = document.querySelector(".result");
 const icons =  document.querySelector(".icons");
 const willpowerReRoll = document.querySelector(".btn-WPRR");
+const btnD10 = document.querySelector(".btn-d10");
 const formDamage = document.querySelector(".form-damage");
 const resultDamage = document.querySelector(".damage");
 const resultCrit = document.querySelector(".crit");
+const resultD10 = document.querySelector(".d10");
 
 let black = [];
 let red = [];
@@ -14,6 +16,7 @@ let crits = 0;
 let rerollable = 0;
 let damageCrits = 0;
 let damageSum = 0;
+let d10Sum = 0;
 
 function vampireDice() {
     return Math.floor(Math.random() * 10) + 1;
@@ -188,6 +191,21 @@ function clearDamage() {
     }
 }
 
+function countD10s() {
+    resultD10.innerHTML = "d10 = ";
+    switch (d10Sum) {
+        case 10:
+            d10Sum += vampireDice();
+            break;
+        case 1:
+            d10Sum -= vampireDice();
+            break;
+    }
+    resultD10.innerHTML += d10Sum;
+}
+
+function clearD10s() {d10Sum = 0;}
+
 formRoller.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -226,4 +244,10 @@ formDamage.addEventListener("submit", (event) => {
     fillDamage(d6s);
     countDamage();
     clearDamage();
+});
+
+btnD10.addEventListener("click", () => {
+    d10Sum = vampireDice();
+    countD10s();
+    clearD10s();
 });

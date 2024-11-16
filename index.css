@@ -40,6 +40,14 @@ label {
     margin-top: 1rem;
 }
 
+.btn-d10 {
+    border-radius: 15px;
+    border-color: white;
+    padding: 5px;
+    padding-inline: 10px;
+    margin-top: 1rem;
+}
+
 .btn-WPRR {
     border-radius: 15px;
     border-color: white;
@@ -71,6 +79,16 @@ label {
 }
 
 .crit {
+    background-color: darkgrey;
+    color: white;
+    margin: 0;
+    margin-block: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-size: 3rem;
+}
+
+.d10 {
     background-color: darkgrey;
     color: white;
     margin: 0;
